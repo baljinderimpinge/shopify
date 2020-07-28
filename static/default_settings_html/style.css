@@ -1,0 +1,99 @@
+.ecocart-checker:after{content:'';position:absolute;display:none}
+.ecocart-block input:checked ~ .ecocart-checker:after{display:block}
+.ecocart-block .ecocart-checker:after{left:6px;top:0;width:5px;height:10px;border:solid #00CB8F;border-width:0 4px 4px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+.checked{max-height: 1000px !important;}.descr{display: none;}.visible{display: block !important;}.background{background: #fff !important;box-shadow: 1px 1px 8px #00c364;}.show-btn{background-image: url(ask.svg); background: none;}
+
+
+/* The container */
+.ecocart-block {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-top: -25px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.ecocart-block input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.ecocart-checker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+}
+
+/* On mouse-over, add a grey background color */
+.ecocart-block:hover input ~ .ecocart-checker {
+  /*background-color: #ccc;*/
+}
+
+/* When the checkbox is checked, add a blue background */
+.ecocart-block input:checked ~ .ecocart-checker {
+  /*background-color: #2196F3;*/
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.ecocart-checker:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.ecocart-block input:checked ~ .ecocart-checker:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.ecocart-block .ecocart-checker:after {
+  left: 9px;
+  top: 5px;
+  width: 9px;
+  height: 18px;
+  border: solid #13b147;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#ecocart-text-wrapper p {
+  text-align: left;
+}
+
+
+@media only screen and (max-width: 600px) {
+  #ecocart-text-wrapper img {
+    display: none;
+  }
+
+  #ecocart-text-wrapper p {
+    text-align: center;
+  }
+
+  #ecocart-content-wrapper {
+    flex-direction: column;
+  }
+
+  .show-btn {
+    display: inline !important;
+  }
+}

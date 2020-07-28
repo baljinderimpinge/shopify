@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <button id="getLoc">get loc</button>
+<script>
+  /*
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, reject);
+    console.log('xxx');
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function reject() {
+    console.log('reject');
+}
+
+function showPosition(position) {
+    console.log(position.coords);
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('getLoc').addEventListener('click', () => {
+    getLocation();
+  });
+});
+*/
+
+
+
+var getPosition = function (options) {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+  });
+}
+
+async function run() {
+  try {
+    let result = await getPosition();
+    alert(result.coords.longitude);
+  } catch (e) {
+    alert(e);
+  }
+  
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  run();
+})
+  
+  /*
+  .then((position) => {
+    alert(position.coords.longitude);
+  })
+  .catch((err) => {
+    alert(err.message);
+  });*/
+
+
+</script>
+</body>
+</html>

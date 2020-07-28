@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="--global-ribbon-height:0px;" class="mdl-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/uptown.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+    <style>
+        p {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <img src="https://ecocart.io/wp-content/uploads/2020/01/Ресурс-1.svg" class="custom-logo" alt="Ecocart" width="259">
+        </header>
+
+
+
+        <nav>
+            <ul class="tabs">
+                <!-- <li><a href="/home">Home</a></li>-->
+                <li><a href="/app">Account Settings</a></li>
+                <li><a href="/settings">Customization Settings</a></li>
+                <li><a href="/instruction">Set Up Instructions</a></li>
+            </ul>
+        </nav>
+
+
+
+        <div id="alertBlock"></div>
+
+        <div class="row" style="display: flex; justify-content: center;">
+            <div class="column nine">
+
+                <article>
+
+                
+                <h3 style="font-weight: 600;">Thank you for installing EcoCart!</h3>
+                <p>Next, we’ll walk you through getting EcoCart set up into your store. Just follow the steps in
+                <a href="/instruction" id="integrations" target="_blank">our written Setup Instructions</a>. Don’t worry, it only takes about 9 minutes.</p>
+               
+                <p>Alternatively, EcoCart is a Shopify Partner and can assist you with the configuration of the
+                Shopify App. If you would like us to handle the configuration, or for any other questions,
+                please contact us at <a href="mailto:support@ecocart.io">support@ecocart.io</a>.</p>
+                <p>- Your friends at EcoCart</p>
+
+                </article>
+
+            </div>
+            
+        </div>
+
+
+        <footer>
+
+        </footer>
+    </main>
+    <script src="/static/js/admin_common.js"></script>
+    <script>
+async function ready() {
+    menu();
+}
+
+document.addEventListener("DOMContentLoaded", ready);
+
+
+ShopifyApp.ready(function() {
+    document.querySelector('#integrations').addEventListener('click', function (e){
+        e.preventDefault();
+        let a = e.target;
+        ShopifyApp.remoteRedirect(a.href);
+    });
+});
+
+    </script>
+</body>
+</html>

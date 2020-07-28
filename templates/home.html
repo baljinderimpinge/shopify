@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" style="--global-ribbon-height:0px;" class="mdl-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/uptown.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <script>
+        window.ecocart_h = {{ ecocart_h }};
+    </script>
+    <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <img src="https://ecocart.io/wp-content/uploads/2020/01/Ресурс-1.svg" class="custom-logo" alt="Ecocart" width="259">
+        </header>
+
+
+
+        <nav>
+            <ul class="tabs">
+               <!-- <li><a href="/home">Home</a></li>-->
+                <li class="active"><a href="/app">Account Settings</a></li>
+                <li><a href="/settings">Customization Settings</a></li>
+                <li><a href="/instruction">Set Up Instructions</a></li>
+            </ul>
+        </nav>
+
+
+
+        <div id="alertBlock"></div>
+
+        <div class="row" style="display: flex; justify-content: center;">
+
+            <div class="column nine">
+
+                <article>
+
+                    <form method="POST" action="">
+
+                        {% if enable %}
+                        <div class="row">
+                            <label>Enable EcoCart</label>
+                            {{ form.production() }}
+                        </div>
+                        {% endif %}
+
+                        <div class="row">
+                            <label for="product_types" style="font-weight: 600;">Store Category</label>
+                            {{ form.product_types() }}
+                        </div>
+
+                        <div class="row">
+                            <label style="font-weight: 600;">Account Manager Name</label>
+                            {{ form.account_manager_name() }}
+                            <span class="errorMsg"></span>
+                        </div>
+
+                        <div class="row">
+                            <label style="font-weight: 600;">Account Manager Title</label>
+                            {{ form.account_manager_title() }}
+                            <span class="errorMsg"></span>
+                        </div>
+
+                        <div class="row">
+                            <label style="font-weight: 600;">Number of Employees</label>
+                            {{ form.number_of_employees(type='number', min=0) }}
+                            <span class="errorMsg"></span>
+                        </div>
+
+                        <div style="font-weight: 600;">Average Item Weight (default)</div>
+                        <div class="row">
+                            <div class="column eight">
+                                {{ form.weight(min=0.1, type='number', step=0.1) }}
+                                <span class="errorMsg"></span>
+                            </div>
+                            <div class="column four">
+                                {{ form.weight_unit() }}
+                                <span class="errorMsg"></span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 style="font-weight: 600; padding-top: 10px;">Select whether you or your customer pay for the offsets</h4>
+                        </div>
+
+                        <div style="display: flex; flex-direction: row;">
+                            {% set fee = form.fee | list %}
+                            <div style="margin-right: 50px;">
+                                <label style="font-weight: 600;">
+                                    {{ fee[0]() }} Customer
+                                </label>
+                                <span style=" font-style: italic;">15&cent; transaction fee</span><br> no cost to you
+                            </div>
+                            <div>
+                                <label style="font-weight: 600;" >
+                                    {{ fee[1]() }} Company
+                                </label>
+                                <span style=" font-style: italic;">3&cent; transaction fee</span><br>
+                                <a id="estimateMyCost" href="#" style="text-decoration: underline;text-decoration-color: #14B148;">Estimate my cost</a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                        </div>
+
+                        <div id="numberOfItems" class="row">
+                            <label for="number_of_items" ><h3 style="font-weight: 600;"> Number of items sold per month</h3></label>
+                            {{ form.number_of_items() }}
+
+                        <div id="yourEstimated">
+                            <h5 style="color: #14B148; padding-top: 15px;">Your estimated cost is <span id="prefixCalc">{{ prefix_calc }}</span> <span id="yourEstimatedCalc">{{ estimated_calc }}</span> per month</h5>
+                            <p>For a more specific estimated cost, please contact us at
+                                <a href="mailto:support@ecocart.io">support@ecocart.io</a></p>
+                        </div>
+
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <button onClick="div_Hide()">Save</button>
+                        </div>
+
+                        {% if not enable %}
+                        <div class="row" style="display: none;" id="divHide">
+                            <h2 style="font-weight: 600; color: #13b147;">Thank you for installing EcoCart!</h2>
+                            <div style="font-weight: 600;">
+                                To finish setup, create an account through your EcoCart Dashboard by clicking,
+                                <a id="registration" style="color: #14B148; font-size: 1.2em; text-decoration: underline;" href="https://admin.ecocart.io/registration/?shop={{ shop_name }}&email={{ email }}" target="_blank"> HERE</a>
+                                <p style="font-size: 0.8em; padding-top: 10px;">*If you already have  EcoCart installed in another store of yours, add additional stores to your account in the <a href="https://admin.ecocart.io/account/" target="_blank">Settings</a> of your EcoCart Dashboard</p>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </form>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+
+        </footer>
+    </main>
+    <script> 
+        var inputs=document.querySelectorAll("#account_manager_name, #account_manager_title,#number_of_employees,#weight")
+        var errorMsgs=document.querySelectorAll('#account_manager_name +span.errorMsg,#account_manager_title +span.errorMsg,#number_of_employees +span.errorMsg,#weight +span.errorMsg');
+        function div_Hide() { 
+            for (var i = 0; i < inputs.length; i++) {               
+                if(inputs[i].value==="" || inputs[i].value===undefined){
+                    errorMsgs[i].textContent = 'Required field';
+                    let errorID=inputs[i].id;
+                    document.getElementById(errorID).style.borderStyle= "solid";
+                    document.getElementById(errorID).style.borderColor= "red";
+                }
+                else{
+                    errorMsgs[i].textContent = '';
+                    let errorID=inputs[i].id;
+                    document.getElementById(errorID).style.borderStyle= "";
+                    document.getElementById(errorID).style.borderColor= "";
+                }
+            }
+            let values = []              
+            inputs.forEach(v => values.push(v.value))
+            if(values.includes('') || values.includes(undefined)){
+                document.getElementById("divHide").style.display = "none";
+            }
+            else{
+                document.getElementById("divHide").style.display = "block";
+            }
+           
+        } 
+	</script> 
+    <script src="/static/js/admin_common.js"></script>
+    <script src="/static/js/home.js"></script>
+</body>
+</html>

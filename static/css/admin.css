@@ -1,0 +1,58 @@
+main {
+    text-align: left;
+}
+
+header {
+    background-color: inherit;
+    min-height: inherit;
+}
+nav, article {
+    padding: 10px;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 1em;
+}
+
+li label {
+    display: inline-block;
+}
+
+textarea {
+    height: 150px;
+}
+
+h3 {
+    color: #14B148;
+}
+
+.preview {
+    margin-bottom: 20px;
+}
+
+textarea {
+    margin-bottom: 20px;
+    font-size: 0.85em;
+}
+
+.preview {
+    margin-bottom: 30px;
+}
+
+ul.tabs li {
+    margin-bottom: 0;
+}
+
+.errorMsg {
+    width  : 100%;
+    padding: 0;    
+    font-size: 100%;
+    color: rgb(255, 255, 255);
+    background-color: #d93025;
+    border-color:#d93025;
+    box-sizing: border-box;
+  } 

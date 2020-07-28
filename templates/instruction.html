@@ -1,0 +1,187 @@
+<html lang="en" style="--global-ribbon-height:0px;" class="mdl-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/uptown.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+    <style>
+        .instblock{padding: 40px 0px;} .instblock img{max-width: 80%; border: solid 1px #07af4f; margin-bottom: 10px;} .instblock ul{list-style: inside;} .instblock li{list-style-type: initial; font-weight: 500; line-height: 1.4em;}
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <img src="https://ecocart.io/wp-content/uploads/2020/01/Ресурс-1.svg" class="custom-logo" alt="Ecocart" width="259">
+        </header>
+
+
+
+        <nav>
+            <ul class="tabs">
+                <!-- <li><a href="/home">Home</a></li>-->
+                <li><a href="/app">Account Settings</a></li>
+                <li><a href="/settings">Customization Settings</a></li>
+                <li class="active"><a href="/instruction">Set Up Instructions</a></li>
+            </ul>
+        </nav>
+
+
+
+        <div id="alertBlock"></div>
+
+        <div class="row" style="display: flex; justify-content: center;">
+
+            <div class="column nine">
+            
+            <div class="instrheader">
+           
+                                        <h2 style="font-weight: 600; color: #13b147;"> Thank you for installing EcoCart!</h2>
+
+            <h4>Next, we’ll walk you through getting EcoCart set up into your store. Don’t worry, it only takes about 8 minutes.</h4> 
+            <h4>If you’re more of a video person, you will find our install video guide <a href="https://youtu.be/wdAc3NjqO7I" target="_blank" >here</a>.</h4>
+
+<h4>EcoCart is a Shopify Partner and can assist you with the setup, customization, or placement at any time. For help or any other questions, please contact us at <strong><a href="mailto:support@ecocart.io" style="color: #07af4f;" >support@ecocart.io</a></strong>.</h4>
+            </div>
+            
+<!--
+            <div class="instblock">
+                <h2><span>1.</span> Account Settings</h2>
+                <img src="../static/img/media/img1.png" alt="">
+            </div>
+-->
+            <div class="instblock">
+                <h2><span>1.</span> Account Settings</h2>
+                <p> First, fill out some basic information about your shop in the Account Settings Tab. </p>
+                                <p>Then, select who will pay for the offsets:</p>
+                                                        <ul>
+<li>1. Customers: Give your customers the option to make their orders carbon neutral.</li>
+<li>2. Company: Make all your products carbon neutral by paying for the offsets on behalf of your customers. (You can change this setting at any time and the change happens instantly!)</li>
+<img src="../static/img/media/img22.png" alt=""> </ul>
+
+            </div>
+            <div class="instblock">
+                <h2><span>2.</span> Click save and you will be prompted to EcoCart.io to create an account </h2>
+<!--                <p>Fill out your company name, email, and password to create your account. (Your shop URL should be auto-filled)</p>-->
+                <img src="../static/img/media/img3.png" alt="">
+            </div>
+            <div class="instblock">
+                <h2><span>3.</span> Create your EcoCart Account</h2>
+                <p>Fill out your company name, email, and password to create your account. (Your shop URL will be autofilled)</p>
+                <img src="../static/img/media/img4.png" alt="">
+            </div>
+            <div class="instblock">
+                <h2><span>4.</span> Billing Information</h2>
+                <p>In the Billing tab of your EcoCart dashboard, fill out your billing information. Don’t worry, EcoCart is still completely free for you, we just need you to collect the carbon offset fees on our behalf.</p>
+                <img src="../static/img/media/img5.png" alt="">
+            </div>
+            
+            <div class="instblock">
+                <h2><span>5.</span> Back to Shopify Dashboard</h2>
+                 <p>After hitting ‘Add Your Card,’ click the link in the pop-up box to be redirected back to your EcoCart Shopify Dashboard. </p>
+                <img src="../static/img/media/img6.png" alt="">
+            </div>
+            
+           
+             <div class="instblock">
+                <h2><span>6.</span> Placement on the Page</h2>
+                <p>EcoCart auto-integrates with your shop if you’re using any of the following themes:</p>
+                <ul>
+                                                           <li>Debut</li>
+                                                            <li>Supply</li>
+                                                             <li>Brooklyn</li>
+                                                              <li>Boundless</li>
+                                                               <li>Simple</li>
+                                                                <li>Venture</li>
+                                                                 <li>Minimal</li>
+                                                        </ul>
+                                                        <p>If you ARE using one of these themes, you can skip this step completely! </p>
+                                                         <p>If you’re using any other themes, or if you want EcoCart to show up anywhere other than the placement of the auto-integration, you can do this with a little HTML magic. We’ll walk you through that below.</p>
+                                                         <p>First, figure out where in your cart you’d like EcoCart to be placed. For example, this store first decided that they would like EcoCart to appear above the CHECKOUT button in their store.</p>
+                <img src="../static/img/media/img9.png" alt="">
+                <p>To do this, right-click on the checkout button and choose Inspect.</p>
+                <img src="../static/img/media/img10.png" alt="">
+                <p>This brings up a code inspector. Below is the specific code that comes up when you inspect the checkout button on this cart page.</p>
+                <img src="../static/img/media/img11.png" alt="">
+                <p>Then find a class or id to reference. For this particular example, below is the code for the checkout button and the class or id to reference is Cart_Checkout.</p>  
+                <p>It's important that you choose a class that is unique; otherwise, EcoCart could appear in multiple places throughout the page. You would not want to choose the class Button, for example, because a lot of elements on the page probably use this class. </p>  
+                 <img src="../static/img/media/img12.png" alt="">
+                 
+                 <p>HELPFUL TIP: If the class that you choose happens to be a two-part class name that contains a space like “cart__shipping rte” then all you have to do is remove everything after the space for it to work correctly: “cart__shipping”. Don’t forget to double check that the first part of this class is unique on the page. </p>
+                 
+                 <img src="../static/img/media/img_22.png" alt="">
+                 
+                 <p>Once you have decided on a class, copy and paste it into your Customization Settings under “Placement.” In this case, we want the EcoCart box to appear above the element with the class Cart__Checkout, so we selected the “before” placement option. </p>
+                 <img src="../static/img/media/img13.png" alt="">
+                 <p>Make sure to include a period (.) before any class name, and a hash (#) before any id, following standard CSS notation.</p>
+            </div>
+            
+            
+             <div class="instblock">
+                <h2><span>7.</span> Design customization</h2>
+                <p>Now you get to choose how EcoCart will look within your store. Below you can see how EcoCart looks by default. </p>
+                <strong><p>If this works for you, simply click “Enable EcoCart” in the Account Settings tab and you’ll be all set up!</p></strong>
+                <img src="../static/img/media/img7.png" alt="">
+                <p>HELPFUL TIP: If the checkout info of your cart page is condensed over to one side, then you could end up with EcoCart looking squished like this: </p>
+                 <img src="../static/img/media/img_24.png" alt="">
+                 <p>To solve for this, we’ve created some design options to choose from for your “condensed cart” here in this <a href="https://docs.google.com/document/d/1_jFDfBZ_R60nipvv6rwCBqYhag27Ja9pl__eu-I1_a4/edit?usp=sharing">doc.</a></p>
+                 <p>All you have to do is copy and paste the code for each respective view into the code boxes of your Customization Settings tab of your Shopify dashboard.</p>
+                <p>If you want to customize the box, click “No” and HTML & CSS boxes will appear for your complete customization. </p>
+                <ul>There are 3 different widget preview boxes:
+
+                    <li>1. Loading View: how the box looks while calculating the cost of making the order carbon neutral</li>
+                    <li>2. Website View: when displaying the carbon neutral order amount</li>
+                    <li>3. Success View: when a customer has checked the box to make their order carbon neutral.</li>
+                    
+                </ul>
+                 <img src="../static/img/media/img_25.png" alt="">
+                 <p>If you are familiar with HTML & CSS, this should all make sense to you. If you have no idea what this all means, we’re happy to help. Just email <strong ><a href="mailto:support@ecocart.io" style="color: #07af4f;">support@ecocart.io</a></strong> and we will custom code the box to your specifications. </p>
+                 
+                   <div class="instblock">
+                    <h2><span>8.</span> Enable EcoCart</h2>
+                <p>Navigate back to the Account Settings tab of your EcoCart Shopify Dashboard and check the box ‘Enable EcoCart.’</p>
+                <img src="../static/img/media/img14.png" alt="">
+                <p>That’s it! Now you’ll be able to offer carbon neutral products to your customers.</p>
+            </div>
+            
+          
+                <h2><span></span> Helpful Tip: Hide the EcoCart Product </h2>
+                <p>As you might have noticed, the EcoCart carbon neutral “product” automatically shows in the catalog of your store like this:</p>
+                <img src="../static/img/media/img15.png" alt="">
+                <p>If you don’t want the carbon neutral “product” in your catalog, follow these three easy steps:</p>
+                <p>To prevent this from happening, follow these three easy steps:</p>
+                                                   <ul>
+                                                       <li>1. In the settings of your shop, go to Products > Collections, then click “Create Collection” with the title ‘All’ (if you have a collection titled ‘All’ already, then skip this step)</li>
+                                                        <img src="../static/img/media/img16.png" alt="">
+                                                        <li>2. Create the following rules for this collection:<br>
+                                                     a. Product Price is greater than 0
+                                                     b. Product Title is not equal to Carbon Neutral Order
+                                                  </li>
+                                                   <img src="../static/img/media/img17.png" alt="">
+                                                  <li>3. Then go to Products > Carbon Neutral Order > Search Engine Listing Preview and remove the EcoCart’s SEO URL by unchecking the “Create a URL redirect for…” checkbox that appears only after clicking into the ‘URL and handle’ box.</li>
+                                                   <img src="../static/img/media/img18.png" alt="">
+                                                  </ul>
+                                                   <p>That’s it - you’re all done. Your customers can now make their orders carbon neutral when they shop with you!</p>
+            </div>
+            <div class="instblock" style="text-align: center;">
+                <h2>Getting Help</h2>
+                                    <p>We are always happy to assist on any installation. We have designers on hand who know how to properly design and place the EcoCart box to look perfect on your particular shop. If these instructions seem too difficult, email <strong ><a href="mailto:support@ecocart.io" style="color: #07af4f;">support@ecocart.io</a></strong> and we'll do all the heavy lifting! </p>
+            </div>
+            </div>
+        </div>
+    <footer>
+
+        </footer>
+    </main>
+    <script src="/static/js/admin_common.js"></script>
+    <script src="/static/js/home.js"></script>
+    <script>
+        async function ready() {
+            menu();
+        }
+
+        document.addEventListener("DOMContentLoaded", ready);
+    </script>
+</body>
+</html>
