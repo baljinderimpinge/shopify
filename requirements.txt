@@ -17,7 +17,7 @@ maxminddb==1.5.4
 peewee==3.13.1
 pyactiveresource==2.1.2
 PyMySQL==0.9.3
-PyYAML==5.3
+PyYAML==5.4
 requests==2.24.0
 ShopifyAPI==5.1.2
 six==1.13.0
